@@ -12,9 +12,6 @@ public class RookieController : ControllerBase
     {
         _personService = personService;
     }
-
-
-    [HttpGet]
     public IActionResult Get()
     {
         return Ok(_personService.GetAll());
@@ -68,12 +65,9 @@ public class RookieController : ControllerBase
     }
     public IActionResult PersonBirthYearEqual2000()
     {
-
         var people = _personService.GetByFilter(p => p.DateOfBirth.Year == 2000);
 
         return Ok(people);
-
-
     }
     public IActionResult PersonBirthYearGreater2000()
     {
@@ -84,6 +78,7 @@ public class RookieController : ControllerBase
     public IActionResult ExportExcel()
     {
         var stream = _personService.ExportToExcel();
+
         return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Rookies.xlsx");
     }
 
