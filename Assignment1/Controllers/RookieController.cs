@@ -84,7 +84,7 @@ public class RookieController : ControllerBase
     public IActionResult ExportExcel()
     {
         var stream = _personService.ExportToExcel();
-        return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Users.xlsx");
+        return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Rookies.xlsx");
     }
 
 }
