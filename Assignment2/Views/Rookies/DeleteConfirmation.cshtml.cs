@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Assignment.Views.Shared
+namespace Assignment.Views.Rookies
 {
-    public class NotificationDialogModel : PageModel
+    public class DeleteConfirmationModel : PageModel
     {
         public void OnGet()
         {

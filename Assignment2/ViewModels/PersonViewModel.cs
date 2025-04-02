@@ -1,13 +1,11 @@
+using Assignment2.Models;
+
 namespace Assignment2.ViewModels;
 
 public class PersonViewModel
 {
-    public int Id { get; set; }
-    public string FirstName { get; set; } = string.Empty;
-    public string LastName { get; set; } = string.Empty;
-    public string Gender { get; set; } = string.Empty;
-    public string PhoneNumber { get; set; } = string.Empty;
-    public DateTime DateOfBirth { get; set; }
-    public string BirthPlace { get; set; } = string.Empty;
-    bool IsGraduated {get; set; } = false;
+    public List<Person> People { get; set; } = new();
+    public int PageSize { get; set; }
+    public int PageIndex { get; set; }
+    public int TotalPage { get; set; }
 }

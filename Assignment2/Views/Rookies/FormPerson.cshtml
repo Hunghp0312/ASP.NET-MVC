@@ -124,6 +124,14 @@
         background-color: #cbd5e1;
     }
 
+    .btn-danger {
+        background-color: red;
+        color: white;
+    }
+    .btn-danger:hover{
+        background-color: orangered;
+    }
+
     .field-validation-error {
         color: var(--danger);
         font-size: 0.875rem;
@@ -131,21 +139,27 @@
         display: block;
     }
 
-    .input-validation-error {
+        .input-validation-error {
         border-color: var(--danger);
     }
-
 
 </style>
 
 <div class="container">
-    <header>
-        <h1>@ViewData["Title"]</h1>
-        <p>Enter person information</p>
+    <header style="display:flex; align-items:center; justify-content:space-between">
+        <div>
+            <h1>@ViewData["Title"]</h1>
+            <p>Enter person information</p>
+        </div>
+        
+        @if (@Model?.Id > 0)
+        {
+            <a asp-action="Delete" asp-controller="Rookies" asp-route-id="@Model.Id" class="btn btn-danger">Delete</a>
+        }
     </header>
 
     <div class="form-container">
-        <form asp-action="Save" asp-controller="Rookies" method="post">
+        <form asp-action="@(Model?.Id > 0 ? "Update":"Create")" asp-controller="Rookies" method="post">
             @if (Model?.Id > 0)
             {
                 <input type="hidden" asp-for="Id" />

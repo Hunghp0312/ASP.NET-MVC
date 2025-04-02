@@ -17,22 +17,27 @@ public class PersonService : IPersonService
         new Person { Id = 9, FirstName = "Henry", LastName = "Moore", Gender = GenderType.Other, DateOfBirth = new DateTime(1988, 9, 5), PhoneNumber = "333-444-5555", BirthPlace = "Denver", IsGraduated = true },
         new Person { Id = 10, FirstName = "Isabella", LastName = "Clark", Gender = GenderType.Female, DateOfBirth = new DateTime(2001, 4, 12), PhoneNumber = "777-666-5555", BirthPlace = "Austin", IsGraduated = false }
     ];
+
     public List<Person> GetAll()
     {
         return _people;
     }
+
     public List<Person> GetByFilter(Func<Person, bool> filter)
     {
         return _people.Where(filter).ToList();
     }
+
     public Person GetOldestPerson()
     {
         return _people.OrderBy(p => p.DateOfBirth).First();
     }
+
     public List<string> GetPeopleFullName()
     {
         return _people.Select(p => p.FullName).ToList();
     }
+
     public Stream ExportToExcel()
     {
         DataTable dt = new("Rookies");

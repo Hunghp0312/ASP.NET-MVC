@@ -11,7 +11,6 @@
 </head>
 
 <body>
-    <partial name="_NotificationDialog" />
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
@@ -23,15 +22,12 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Rookies"
                                 asp-action="Index">Rookies</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Rookies"
-                                asp-action="GetMalePerson">Male</a>
+                                asp-action="MalePerson">Male</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Rookies"
@@ -46,10 +42,26 @@
                                 asp-action="ExportExcel">Export Excel</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Rookies" asp-action="Create">Add
-                                Person</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Rookies" asp-action="PersonBirthYearEqual2000">
+                                Birth Year Equal 2000
+                            </a>
                         </li>
-
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Rookies" asp-action="PersonBirthYearLess2000">
+                                Birth Year Less Than 2000
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Rookies" asp-action="PersonBirthYearGreater2000" >
+                                Birth Year Greater Than 2000
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Rookies" asp-action="Create">
+                                Add
+                                Person
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>

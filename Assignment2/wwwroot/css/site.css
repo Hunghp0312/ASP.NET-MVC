@@ -116,3 +116,42 @@ tr:hover {
     background-color: #fee2e2;
     color: #991b1b;
 }
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+}
+
+    .btn-primary:hover {
+        background-color: #2563eb;
+    }
+
+.btn-secondary {
+    background-color: #e2e8f0;
+    color: var(--dark);
+}
+
+
+
+    .btn-secondary:hover {
+        background-color: #cbd5e1;
+    }
+
+.btn-danger {
+    background-color: red;
+    color: white;
+}
+
+    .btn-danger:hover {
+        background-color: orangered;
+    }

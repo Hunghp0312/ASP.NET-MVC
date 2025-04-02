@@ -12,28 +12,33 @@ public class RookieController : ControllerBase
     {
         _personService = personService;
     }
+
     public IActionResult Get()
     {
         return Ok(_personService.GetAll());
     }
+
     public IActionResult GetMalePerson()
     {
         var people = _personService.GetByFilter(p => p.Gender == GenderType.Male);
 
         return Ok(people);
     }
+
     public IActionResult GetOldestPerson()
     {
         var person = _personService.GetOldestPerson();
 
         return Ok(person);
     }
+
     public IActionResult GetPeopleFullName()
     {
         var people = _personService.GetPeopleFullName();
 
         return Ok(people);
     }
+
     public IActionResult RedirectByAction([FromQuery] string action)
     {
 
@@ -57,29 +62,32 @@ public class RookieController : ControllerBase
 
         return BadRequest("Invalid action parameter. Valid values are 'lessthan', 'equal', 'greaterthan'.");
     }
+
     public IActionResult PersonBirthYearLess2000()
     {
         var people = _personService.GetByFilter(p => p.DateOfBirth.Year < 2000);
 
         return Ok(people);
     }
+
     public IActionResult PersonBirthYearEqual2000()
     {
         var people = _personService.GetByFilter(p => p.DateOfBirth.Year == 2000);
 
         return Ok(people);
     }
+
     public IActionResult PersonBirthYearGreater2000()
     {
         var people = _personService.GetByFilter(p => p.DateOfBirth.Year > 2000);
 
         return Ok(people);
     }
+
     public IActionResult ExportExcel()
     {
         var stream = _personService.ExportToExcel();
 
         return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Rookies.xlsx");
     }
-
 }

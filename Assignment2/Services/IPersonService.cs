@@ -1,17 +1,16 @@
 ﻿using Assignment2.Models;
+using Assignment2.ViewModels;
 namespace Assignment2.Services;
 
 public interface IPersonService
 {
-    
-    List<Person> GetAll();
-    List<Person> GetByFilter(Func<Person, bool> filter);
-    Person GetOldestPerson();
+    PersonViewModel GetAll(int pageSize, int pageIndex);
+    PersonViewModel GetByFilter(Func<Person, bool> filter, int pageSize, int pageIndex);
+    PersonViewModel GetOldestPerson();
     List<string> GetPeopleFullName();
     Stream ExportToExcel();
     Person? GetById(int id);
-    void Insert(Person person);
+    void Create(Person person);
     int Update(Person person);
-    void Detete(int id);
-
+    Person Detete(int id);
 }
